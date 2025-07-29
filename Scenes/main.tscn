@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc37f7jk3xwdk"]
+
+[ext_resource type="PackedScene" uid="uid://1gaysb31vf22" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+albedo_color = Color(0.673473, 0.403766, 0.327959, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.522125, 0.673693, 0.469472, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h2yge"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Environment" id="Environment_7dm0k"]
+background_mode = 1
+background_color = Color(0.529412, 0.807843, 0.921569, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Enviroment"]
+material_override = SubResource("StandardMaterial3D_7dm0k")
+mesh = SubResource("PlaneMesh_ig7tw")
+
+[node name="Cactus2" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(0.044376, 0, 0, 0, 0.112971, 0, 0, 0, 0.044376, 0.528866, 0.056384, 0.32277)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("BoxMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Cactus2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/Cactus2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Cactus" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(0.044376, 0, 0, 0, 0.112971, 0, 0, 0, 0.044376, -0.0975972, 0.056384, 0.322061)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Cactus"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/Cactus/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Cactus3" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(0.044376, 0, 0, 0, 0.112971, 0, 0, 0, 0.044376, 0.279112, 0.0534575, -0.314336)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Cactus3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/Cactus3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Cactus4" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(0.044376, 0, 0, 0, 0.112971, 0, 0, 0, 0.044376, -0.2123, 0.056384, -0.338711)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Cactus4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/Cactus4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Cactus5" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(0.044376, 0, 0, 0, 0.112971, 0, 0, 0, 0.044376, 0.167249, 0.0536524, 0.204871)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("BoxMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/Cactus5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/Cactus5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7dm0k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.590106, 0.265242, -0.76251, 0.504918, 0.615719, 0.604936, 0.629946, -0.741982, 0.229414, -2.34453, 1.78177, 0.239506)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35974, 0)
