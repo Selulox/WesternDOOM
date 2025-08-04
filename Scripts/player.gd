@@ -30,7 +30,8 @@ func _process(delta: float) -> void:
 		restart()
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
-	
+	if Input.is_action_just_pressed("Inventory"):
+		pass
 	if dead:
 		return
 

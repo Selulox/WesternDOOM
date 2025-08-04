@@ -38,3 +38,5 @@ func kill():
 	$Death_Sound.play()
 	animated_sprite_3d.play("death")
 	$CollisionShape3D.disabled = true
+	if dead = true:
+		pass

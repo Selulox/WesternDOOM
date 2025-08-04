@@ -38,11 +38,9 @@ material_override = SubResource("StandardMaterial3D_jjgbg")
 mesh = SubResource("BoxMesh_jjgbg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Cactus"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_jjgbg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Cactus/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bo1nx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
